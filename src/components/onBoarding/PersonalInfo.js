@@ -19,8 +19,8 @@ const PersonalInfo = () => {
   const [qualificationInfo, setQualificationInfo] = useState({
     pgChecked: false,
     ugChecked: false,
-    twelethChecked:false,
-    tenthChecked:false,
+    twelethChecked: false,
+    tenthChecked: false,
     diplamoChecked: false,
     certificatesChecked: false,
   });
@@ -28,11 +28,10 @@ const PersonalInfo = () => {
   const [workInfo, setWorkInfo] = useState({
     prevOfferChecked: false,
     relievingChecked: false,
-    recommendationChecked:false,
-    salarySlipChecked:false,
+    recommendationChecked: false,
+    salarySlipChecked: false,
     bankStatementChecked: false,
   });
-  
 
   const handleSave = () => {
     localStorage.setItem('personalInfo', JSON.stringify(personalInfo));
@@ -42,7 +41,6 @@ const PersonalInfo = () => {
     alert("Details saved in local storage")
   };
 
-
   const handleChange = (field, value) => {
     setPersonalInfo((prevInfo) => ({ ...prevInfo, [field]: value }));
   };
@@ -51,11 +49,10 @@ const PersonalInfo = () => {
     setIdentityInfo((prevInfo) => ({ ...prevInfo, [field]: !prevInfo[field] }));
     setQualificationInfo((prevInfo) => ({ ...prevInfo, [field]: !prevInfo[field] }));
     setWorkInfo((prevInfo) => ({ ...prevInfo, [field]: !prevInfo[field] }));
-
   };
 
   return (
-    <Grid container spacing={2} sx={{marginTop:"80px"}}>
+    <Grid container spacing={2} sx={{ marginTop: "80px" }}>
       <Typography variant='h5'>Welcome, HR</Typography>
       <Grid item xs={12}>
         <h2>Personal Information</h2>
@@ -96,82 +93,84 @@ const PersonalInfo = () => {
           onChange={(e) => handleChange('email', e.target.value)}
         />
       </Grid>
-      <Grid item lg={4} xs={12} sx={{marginTop:"20px"}}>
+
+      <Grid item lg={4} xs={12} sx={{ marginTop: "20px" }}>
         <Typography variant='h3'>Identity</Typography>
         <div>
-        <FormControlLabel
-          control={<Checkbox checked={identityInfo.aadharChecked} onChange={() => handleCheckboxChange('aadharChecked')} />}
-          label="Aadhar"
-        />
+          <FormControlLabel
+            control={<Checkbox checked={identityInfo.aadharChecked} onChange={() => handleCheckboxChange('aadharChecked')} />}
+            label="Aadhar"
+          />
         </div>
         <div>
-        <FormControlLabel
-          control={<Checkbox checked={identityInfo.panChecked} onChange={() => handleCheckboxChange('panChecked')} />}
-          label="PAN"
-        />
+          <FormControlLabel
+            control={<Checkbox checked={identityInfo.panChecked} onChange={() => handleCheckboxChange('panChecked')} />}
+            label="PAN"
+          />
         </div>
         <div>
-        <FormControlLabel
-          control={<Checkbox checked={identityInfo.voterIdChecked} onChange={() => handleCheckboxChange('voterIdChecked')} />}
-          label="Voter ID"
-        />
+          <FormControlLabel
+            control={<Checkbox checked={identityInfo.voterIdChecked} onChange={() => handleCheckboxChange('voterIdChecked')} />}
+            label="Voter ID"
+          />
         </div>
         <div>
-        <FormControlLabel
-          control={
-            <Checkbox checked={identityInfo.drivingLicenseChecked} onChange={() => handleCheckboxChange('drivingLicenseChecked')} />
-          }
-          label="Driving License"
-        />
+          <FormControlLabel
+            control={
+              <Checkbox checked={identityInfo.drivingLicenseChecked} onChange={() => handleCheckboxChange('drivingLicenseChecked')} />
+            }
+            label="Driving License"
+          />
         </div>
       </Grid>
-      <Grid item lg={4} xs={12} sx={{marginTop:"20px"}}>
-      <Typography variant='h3'>Qualification</Typography>
-      <div>
-        <FormControlLabel
-          control={<Checkbox checked={qualificationInfo.pgChecked} onChange={() => handleCheckboxChange('pgChecked')} />}
-          label="PG"
-        />
+      <Grid item lg={4} xs={12} sx={{ marginTop: "20px" }}>
+        <Typography variant='h3'>Qualification</Typography>
+        <div>
+          <FormControlLabel
+            control={<Checkbox checked={qualificationInfo.pgChecked} onChange={() => handleCheckboxChange('pgChecked')} />}
+            label="PG"
+          />
         </div>
         <div>
-        <FormControlLabel
-          control={<Checkbox checked={qualificationInfo.ugChecked} onChange={() => handleCheckboxChange('ugChecked')} />}
-          label="UG"
-        />
+          <FormControlLabel
+            control={<Checkbox checked={qualificationInfo.ugChecked} onChange={() => handleCheckboxChange('ugChecked')} />}
+            label="UG"
+          />
         </div>
         <div>
-        <FormControlLabel
-          control={<Checkbox checked={qualificationInfo.twelethChecked} onChange={() => handleCheckboxChange('twelethChecked')} />}
-          label="12th"
-        />
+          <FormControlLabel
+            control={<Checkbox checked={qualificationInfo.twelethChecked} onChange={() => handleCheckboxChange('twelethChecked')} />}
+            label="12th"
+          />
         </div>
         <div>
-        <FormControlLabel
-          control={
-            <Checkbox checked={qualificationInfo.tenthChecked} onChange={() => handleCheckboxChange('tenthChecked')} />
-          }
-          label="10th"
-        />
+          <FormControlLabel
+            control={
+              <Checkbox checked={qualificationInfo.tenthChecked} onChange={() => handleCheckboxChange('tenthChecked')} />
+            }
+            label="10th"
+          />
         </div>
         <div>
-         <FormControlLabel
-          control={
-            <Checkbox checked={identityInfo.diplamoChecked} onChange={() => handleCheckboxChange('diplamoChecked')} />
-          }
-          label="Diplamo"
-        />
+          <FormControlLabel
+            control={
+              <Checkbox checked={identityInfo.diplamoChecked} onChange={() => handleCheckboxChange('diplamoChecked')} />
+            }
+            label="Diplamo"
+          />
         </div>
         <div>
-         <FormControlLabel
-          control={
-            <Checkbox checked={identityInfo.certificatesChecked} onChange={() => handleCheckboxChange('certificatesChecked')} />
-          }
-          label="Cerificates"
-        />
+          <FormControlLabel
+            control={
+              <Checkbox checked={identityInfo.certificatesChecked} onChange={() => handleCheckboxChange('certificatesChecked')} />
+            }
+            label="Cerificates"
+          />
         </div>
       </Grid>
-      <Grid item lg={4} xs={12} sx={{marginTop:"20px"}}>
-      <Typography variant='h3'>Work Related</Typography>
+
+      <Grid item lg={4} xs={12} sx={{ marginTop: "20px" }}>
+        <Typography variant='h3'>Work Related</Typography>
         <FormControlLabel
           control={<Checkbox checked={workInfo.prevOfferChecked} onChange={() => handleCheckboxChange('prevOfferChecked')} />}
           label="Previous Componay Offer"
@@ -190,16 +189,15 @@ const PersonalInfo = () => {
           }
           label="3 months Salary Slips"
         />
-         <FormControlLabel
+        <FormControlLabel
           control={
             <Checkbox checked={workInfo.bankStatementChecked} onChange={() => handleCheckboxChange('bankStatementChecked')} />
           }
           label="6 months bank statement"
         />
       </Grid>
-      
-      <Grid item xs={12}>
 
+      <Grid item xs={12}>
         <Button variant="contained" onClick={handleSave}>
           Save
         </Button>
